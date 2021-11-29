@@ -11,13 +11,5 @@ def Menu(file):
             ingredients.append(line)
             ingredients = sorted(ingredients)
     print(food, ingredients)
-
-
-
-
-
-
-
-
-
+    
 print(Menu("spam.txt"))
