@@ -1,15 +1,14 @@
 
 def Menu(file):
     file = open(file, 'r')
-    food = []
-    ingredients = []
+    food = {}
     for line in file:
         line = line.rstrip()
         if line != "" and line[0].isupper() and not line.endswith(':'): #food
-            food.append(line)
-        elif line != "" and line[0].islower() and line not in ingredients: #ingredients
-            ingredients.append(line)
-            ingredients = sorted(ingredients)
-    print(food, ingredients)
-    
+            f = line
+            food.update({line : []})
+        elif line != "" and line[0].islower(): #ingredients
+            food[f].append(line)
+    return food
+
 print(Menu("spam.txt"))
