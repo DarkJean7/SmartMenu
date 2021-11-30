@@ -45,6 +45,10 @@ def ChangeAvailability():
         elif status.upper() == "T":
             restaurant[item].insert(0, True)
 
+def Display():
+    for i in range(len(fL)):
+        print(f"{fL[i]}..........")
+
 restaurant = Menu("spam.txt")
 fL = FoodList("spam.txt")
 
@@ -52,3 +56,4 @@ print(restaurant)
 print(len(fL))
 print(Available())
 print(ChangeAvailability())
+print(Display())
